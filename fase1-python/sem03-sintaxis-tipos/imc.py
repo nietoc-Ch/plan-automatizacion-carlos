@@ -3,7 +3,7 @@
 
 def main():
     nombre = "Carlos"
-    peso_kg = 78.5
+    peso_kg = 85
     altura_m = 1.80
 
     # ** es el operador de potencia en Python (en Java sería Math.pow)
