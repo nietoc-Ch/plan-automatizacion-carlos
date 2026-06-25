@@ -1,0 +1,27 @@
+[
+    {
+        "nombre": "Carlos",
+        "peso_kg": 85.0,
+        "altura_m": 1.80
+    },
+    {
+        "nombre": "Ana",
+        "peso_kg": 62.0,
+        "altura_m": 1.68
+    },
+    {
+        "nombre": "Luis",
+        "peso_kg": 95.0,
+        "altura_m": 1.75
+    },
+    {
+        "nombre": "Eva",
+        "peso_kg": 55.0,
+        "altura_m": 1.62
+    },
+    {
+        "nombre": "Mario",
+        "peso_kg": 78.0,
+        "altura_m": 1.83
+    }
+]

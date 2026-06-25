@@ -64,3 +64,4 @@ Icon
 logs/
 output/
 tmp/
+reporte_*.json            # Reportes con timestamp (Fase 1)
