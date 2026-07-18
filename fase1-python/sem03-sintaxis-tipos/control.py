@@ -28,7 +28,7 @@ def main():
     n = 0
     while n < 20:
         n += 1
-        if n % 2 != 0:  # si es impar, saltar
+        if n % 2 != 0:    # si es impar, saltar
             continue
         print(f"  {n}", end=" ")
     print()
@@ -46,9 +46,3 @@ def main():
     tiene_carnet = True
     if edad >= 18 and tiene_carnet:
         print(f"  Puede conducir edad={edad}, carnet={tiene_carnet}")
-    else:
-        print(f"  No puede conducir edad={edad}, carnet={tiene_carnet}")
-
-
-if __name__ == "__main__":
-    main()
