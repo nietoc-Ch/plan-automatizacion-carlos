@@ -1,0 +1,44 @@
+{
+  "generado_en": "2026-07-21T21:55:26",
+  "n_personas": 5,
+  "imc_promedio": 24.69,
+  "imc_max": 31.02,
+  "imc_min": 20.96,
+  "personas": [
+    {
+      "nombre": "Carlos",
+      "peso_kg": 85.0,
+      "altura_m": 1.8,
+      "imc": 26.23,
+      "categoria": "sobrepeso"
+    },
+    {
+      "nombre": "Ana",
+      "peso_kg": 62.0,
+      "altura_m": 1.68,
+      "imc": 21.97,
+      "categoria": "normal"
+    },
+    {
+      "nombre": "Luis",
+      "peso_kg": 95.0,
+      "altura_m": 1.75,
+      "imc": 31.02,
+      "categoria": "obesidad"
+    },
+    {
+      "nombre": "Eva",
+      "peso_kg": 55.0,
+      "altura_m": 1.62,
+      "imc": 20.96,
+      "categoria": "normal"
+    },
+    {
+      "nombre": "Mario",
+      "peso_kg": 78.0,
+      "altura_m": 1.83,
+      "imc": 23.29,
+      "categoria": "normal"
+    }
+  ]
+}

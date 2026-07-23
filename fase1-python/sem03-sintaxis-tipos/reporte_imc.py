@@ -5,41 +5,35 @@ Es el patrón de cualquier automatización: leer → procesar → escribir.
 """
 
 import json
+from dataclasses import asdict
 from datetime import datetime
 from pathlib import Path
 
-from imc_lib import calcular_imc, clasificar_imc
+from imc_lib import Persona, calcular_persona
 
 
-def cargar_personas(ruta: Path) -> list[dict]:
-    """Lee un archivo JSON con la lista de personas."""
+def cargar_personas(ruta: Path) -> list[Persona]:
+    """Lee un archivo JSON con la lista de personas y devuelve list[Persona]."""
     if not ruta.exists():
         raise FileNotFoundError(f"No existe: {ruta}")
-    return json.loads(ruta.read_text())
+    datos = json.loads(ruta.read_text())
+    return [Persona(**p) for p in datos]
 
 
-def calcular_reporte(personas: list[dict]) -> dict:
-    """Procesa la lista y devuelve un reporte con resultados + estadísticas."""
+def calcular_reporte(personas: list[Persona]) -> dict:
+    """Procesa la lista de Persona y devuelve un reporte con resultados + estadísticas."""
     resultados = []
     for p in personas:
-        imc = calcular_imc(p["peso_kg"], p["altura_m"])
-        resultados.append(
-            {
-                "nombre": p["nombre"],
-                "peso_kg": p["peso_kg"],
-                "altura_m": p["altura_m"],
-                "imc": round(imc, 2),
-                "categoria": clasificar_imc(imc),
-            }
-        )
+        persona_calc = calcular_persona(p)
+        resultados.append(asdict(persona_calc))
 
     imcs = [r["imc"] for r in resultados]
     return {
         "generado_en": datetime.now().isoformat(timespec="seconds"),
         "n_personas": len(resultados),
-        "imc_promedio": round(sum(imcs) / len(imcs), 2),
-        "imc_max": max(imcs),
-        "imc_min": min(imcs),
+        "imc_promedio": round(sum(imcs) / len(imcs), 2) if imcs else 0,
+        "imc_max": max(imcs) if imcs else 0,
+        "imc_min": min(imcs) if imcs else 0,
         "personas": resultados,
     }
 

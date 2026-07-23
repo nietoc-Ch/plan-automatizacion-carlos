@@ -3,6 +3,17 @@
 Sin I/O. Sin prints. Sin inputs. Solo funciones probables con tests.
 """
 
+from dataclasses import dataclass
+
+
+@dataclass
+class Persona:
+    nombre: str
+    peso_kg: float
+    altura_m: float
+    imc: float = 0.0
+    categoria: str = ""
+
 
 def calcular_imc(peso_kg: float, altura_m: float) -> float:
     """Calcula el IMC. Lanza ValueError si los datos no son positivos."""
@@ -20,3 +31,16 @@ def clasificar_imc(imc: float) -> str:
     if imc < 30:
         return "sobrepeso"
     return "obesidad"
+
+
+def calcular_persona(p: Persona) -> Persona:
+    """Devuelve nueva Persona con imc y categoria calculados y redondeados."""
+    imc_calc = round(calcular_imc(p.peso_kg, p.altura_m), 2)
+    categoria = clasificar_imc(imc_calc)
+    return Persona(
+        nombre=p.nombre,
+        peso_kg=p.peso_kg,
+        altura_m=p.altura_m,
+        imc=imc_calc,
+        categoria=categoria,
+    )
