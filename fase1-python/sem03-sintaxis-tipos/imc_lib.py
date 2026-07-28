@@ -14,6 +14,10 @@ class Persona:
     imc: float = 0.0
     categoria: str = ""
 
+    def __post_init__(self):
+        if not self.nombre or self.nombre.strip() == "":
+            raise ValueError("nombre no puede estar vacío")
+
 
 def calcular_imc(peso_kg: float, altura_m: float) -> float:
     """Calcula el IMC. Lanza ValueError si los datos no son positivos."""

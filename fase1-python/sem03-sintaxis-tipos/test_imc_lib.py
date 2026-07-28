@@ -2,7 +2,7 @@
 
 import pytest
 
-from imc_lib import calcular_imc, clasificar_imc
+from imc_lib import Persona, calcular_imc, clasificar_imc
 
 # ============================================================
 # Tests de calcular_imc
@@ -37,6 +37,23 @@ def test_calcular_imc_altura_cero_lanza_error():
     """Altura 0 no es válida (evita división por cero)."""
     with pytest.raises(ValueError):
         calcular_imc(70, 0)
+
+
+# ============================================================
+# Tests de Persona: validación de nombre
+# ============================================================
+
+
+def test_persona_nombre_vacio_lanza_error():
+    """Crear Persona con nombre vacío lanza ValueError."""
+    with pytest.raises(ValueError):
+        Persona(nombre="", peso_kg=70, altura_m=1.75)
+
+
+def test_persona_nombre_solo_espacios_lanza_error():
+    """Crear Persona con nombre solo con espacios lanza ValueError."""
+    with pytest.raises(ValueError):
+        Persona(nombre="   ", peso_kg=70, altura_m=1.75)
 
 
 # ============================================================
