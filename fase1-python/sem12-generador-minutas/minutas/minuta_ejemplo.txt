@@ -1,0 +1,16 @@
+Reunión de sprint - 2026-07-29
+Participantes: Carlos, Ana, Luis, María
+
+[10:00] Carlos: Buenos días a todos. Hoy revisamos el sprint y los pendientes.
+[10:02] Ana: Terminé la feature del login. Falta el code review antes de mergear.
+[10:05] Carlos: Ana, ¿puedes preparar el PR para mañana?
+[10:06] Ana: Sí, mañana lo tengo listo.
+[10:07] Luis: Estoy trabajando en la migración de la base de datos a Postgres.
+[10:09] Carlos: Luis, envíame el diagrama de la nueva arquitectura la próxima semana.
+[10:10] María: Yo documentaré los cambios de la API esta tarde y los publicaré en Notion.
+[10:12] Carlos: Perfecto. Cerramos aquí. Nos vemos el viernes en el retro.
+
+Acciones:
+- Ana preparará PR de login para mañana
+- Luis enviará diagrama de arquitectura la próxima semana
+- María documentará API esta tarde en Notion
