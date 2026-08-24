@@ -48,9 +48,10 @@ def main() -> None:
     # Guardar JSON
     try:
         args.salida_json.write_text(
-            json.dumps(minuta.to_dict(), indent=2, ensure_ascii=False), encoding="utf-8"
+            json.dumps(minuta.to_dict(), indent=2, ensure_ascii=False),
+            encoding="utf-8",
         )
-    except Exception as e:
+    except OSError as e:
         print(f"Error escribiendo el archivo JSON: {e}", file=sys.stderr)
         sys.exit(1)
 
