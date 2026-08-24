@@ -1,0 +1,10 @@
+[project]
+name = "sem13-http-requests"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "requests>=2.34.2",
+    "tenacity>=9.1.4",
+]
